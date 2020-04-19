@@ -28,14 +28,18 @@
               v-if="individualStuff.id < 3"
             >
               <a :href="individualStuff.url" target="_blank">
-                <div class="stuffImage">
+                <div class="stuffImage hover-class">
                   <img :src="individualStuff.imageUrl" class="stuffImageActual" />
                 </div>
                 <div class="stuffText">
                   <p class="stuffTextTitle">{{individualStuff.title}}</p>
                   <p class="stuffDesc">
-                    <span class="publicationText">Publication:</span>
+                    <span class="publicationText">Client:</span>
                     {{individualStuff.publication}}
+                  </p>
+                   <p class="stuffDesc">
+                    <span class="publicationText">Year:</span>
+                    1990
                   </p>
                 </div>
               </a>
@@ -49,7 +53,7 @@
               v-if="individualStuff.id >= 3"
             >
               <a :href="individualStuff.url" target="_blank">
-                <div class="stuffImage">
+                <div class="stuffImage hover-class">
                   <img :src="individualStuff.imageUrl" class="stuffImageActual" />
                 </div>
                 <div class="stuffText">
@@ -230,6 +234,9 @@ export default {
   position: relative;
   margin-bottom: 50px;
 }
+.hover-class:hover{
+   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
+}
 
 .height-normal {
   height: 292px;
@@ -249,7 +256,6 @@ export default {
 .stuffImage {
   width: 100%;
   max-width: 488px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
   height: 229px;
   overflow: hidden;
   border-radius: 5px;
