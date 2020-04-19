@@ -34,13 +34,10 @@
                 <div class="stuffText">
                   <p class="stuffTextTitle">{{individualStuff.title}}</p>
                   <p class="stuffDesc">
-                    <span class="publicationText">Client:</span>
+                    <span class="publicationText">Publication:</span>
                     {{individualStuff.publication}}
                   </p>
-                   <p class="stuffDesc">
-                    <span class="publicationText">Year:</span>
-                    1990
-                  </p>
+                  
                 </div>
               </a>
             </div>
