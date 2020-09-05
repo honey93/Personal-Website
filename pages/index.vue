@@ -28,14 +28,14 @@
               v-if="individualStuff.id < 3"
             >
               <a :href="individualStuff.url" target="_blank">
-                <div class="stuffImage hover-class">
+                <div class="stuffImage hover-class work">
                   <img :src="individualStuff.imageUrl" class="stuffImageActual" />
                 </div>
-                <div class="stuffText">
+                <div class="stuffText work-left">
                   <p class="stuffTextTitle">{{individualStuff.title}}</p>
                   <p class="stuffDesc">
-                    <span class="publicationText">Publication:</span>
-                    {{individualStuff.publication}}
+                    <span class="publicationText"> Work Type:</span>
+                   <span class="typeWork"> {{individualStuff.publication}} </span>
                   </p>
                   
                 </div>
@@ -50,14 +50,14 @@
               v-if="individualStuff.id >= 3"
             >
               <a :href="individualStuff.url" target="_blank">
-                <div class="stuffImage hover-class">
+                <div class="stuffImage hover-class work">
                   <img :src="individualStuff.imageUrl" class="stuffImageActual" />
                 </div>
-                <div class="stuffText">
+                <div class="stuffText work-left">
                   <p class="stuffTextTitle">{{individualStuff.title}}</p>
                   <p class="stuffDesc">
-                    <span class="publicationText">Publication:</span>
-                    {{individualStuff.publication}}
+                    <span class="publicationText"> Work Type:</span>
+                    <span class="typeWork"> {{individualStuff.publication}} </span>
                   </p>
                 </div>
               </a>
@@ -213,7 +213,8 @@ export default {
 
   color: #4e4e50;
 }
-
+.typeWork{
+}
 .heroImage {
   float: right;
 }
@@ -229,7 +230,7 @@ export default {
   max-width: 488px;
 
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .hover-class:hover{
    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.24);
@@ -246,7 +247,7 @@ export default {
   width: 100%;
   max-width: 488px;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
   float: right;
 }
 
@@ -259,6 +260,8 @@ export default {
 }
 .stuffImageActual {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .stuffTitle {
   margin-bottom: 140px;
@@ -272,6 +275,11 @@ export default {
 }
 .stuffText {
   padding: 10px;
+}
+
+.work-left{
+
+  border-left: 2px solid orange;
 }
 .stuffText p {
   margin: 0;
@@ -333,5 +341,10 @@ export default {
 
 .stuffSection a {
   text-decoration: none;
+}
+
+.work{
+
+  margin-bottom: 20px;
 }
 </style>
