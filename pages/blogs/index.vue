@@ -30,15 +30,14 @@
 import Logo from "~/components/Logo.vue";
 
 export default {
+    head:{
+          title:"Blogs - Honey Thakuria",
+          meta:[{hid:"Blogs",name:"Blogs by Honey Thakuria",content:"Honey Thakuria writes for leading Publications like freeCodeCamp, Codeburst.io on Medium. Check out his latest & popular articles here"}]
+  },
   components: {
     Logo
   },
-  head(){
-      return{
-          title:"Blogs - Honey Thakuria",
-          meta:[{hid:"Blogs",name:"Blogs by Honey Thakuria",content:"Honey Thakuria writes for leading Publications like freeCodeCamp, Codeburst.io on Medium. Check out his latest & popular articles here"}]
-      }
-  },
+
   data() {
     return {
      };
@@ -95,6 +94,7 @@ export default {
   color: black;
 }
 .blog{
+    min-height:50px;
     margin-bottom:15px; 
     margin-top:15px;
 }

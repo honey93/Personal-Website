@@ -72,11 +72,8 @@ import Header from "~/components/global/Header.vue";
 import Footer from "~/components/global/Footer.vue";
 
 export default {
-  components: {
-    Logo
-  },
-  head() {
-    return {
+    head:  {
+
       title: "Contact - Honey Thakuria",
       meta: [
         {
@@ -86,8 +83,12 @@ export default {
             "Honey Thakuria writes for leading Publications like freeCodeCamp, Codeburst.io on Medium. Visist this page to contact him"
         }
       ]
-    };
+   
   },
+  components: {
+    Logo
+  },
+
   data() {
     return {
       imagename: "hi",
