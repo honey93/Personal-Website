@@ -14,7 +14,7 @@
          <a href="https://medium.com/@HoneyThakuria" target="_blank"><i class="fab fa-medium"></i> </a>
         </div>
     
-    <div class="footer-content copyright">Copyright © 2019 Honey Thakuria. </div>
+    <div class="footer-content copyright">© {{ year }} Honey Thakuria. Built with Nuxt.js.</div>
   </div>
 </template>
 
@@ -120,19 +120,9 @@ color: #000000;
 
 <script>
 export default {
-    name:"Footer",
-     beforeCreate(){
-     //  this.$store.dispatch('blogs/fetchBlogs');
-  //  console.log("before Create Header");
-  },
-  created(){
-  //  console.log("Created Header");
-  },
-  beforeMount(){
- //   console.log("beforeMount Header");
-  },
-  mounted(){
-  //  console.log("Mounted Header");
+  name: "Footer",
+  data() {
+    return { year: new Date().getFullYear() };
   }
 };
 </script>
