@@ -1,70 +1,68 @@
-# Honey Thakuria — Portfolio
+ # Honey Thakuria — Portfolio (source)
 
-Personal portfolio of **Honey Thakuria**, Full-Stack Engineer. Built with [Nuxt.js](https://nuxtjs.org) (Vue 2) and deployed as a fully static site to **GitHub Pages**.
+  Source code for my personal portfolio. Built with [Nuxt.js](https://nuxtjs.org) (Vue 2)
+  and published as a static site to GitHub Pages.
 
-🔗 **Live:** https://honey93.github.io/Personal-Website/
+  🔗 **Live:** https://honey93.github.io/
 
-## Sections
+  ## How deployment works
 
-- **Hero** with an animated typing effect of core technologies
-- **About** + career highlights
-- **Skills & Tools** grouped by area
-- **Experience** timeline (Intuit → Cognizant) with the also-roles strip
-- **Selected Work** project cards
-- **Writing** — articles from freeCodeCamp, Codeburst, HackerNoon & Medium
-- **Contact** form (via Formspree)
+  This repo holds the **source code**. The built static site is published to a
+  separate repo, **[`honey93.github.io`](https://github.com/honey93/honey93.github.io)**,
+  which GitHub Pages serves at https://honey93.github.io/ (a *user page*, so the
+  base path is `/`).
 
-## Local development
+  Publishing is **automated** — see [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml):
 
-> **Note:** This project uses Nuxt 2 / webpack 4. On Node 18+ you must run with the
-> legacy OpenSSL provider — it's already baked into the npm scripts via `cross-env`,
-> so the commands below work as-is.
+  > Every push to `master` runs the workflow, which builds the site
+  > (`npm run generate`) and pushes the output to the `honey93.github.io` repo.
 
-```bash
-#install steps
- git clone https://github.com/honey93/Personal-Website.git
-  cd Personal-Website
-  npm install
-  npm run build:docs    # the script I added: builds + makes docs/ + .nojekyll
-  git add docs
-  git commit -m "Build docs"
-  git push
+  So the normal workflow is just:
 
+  edit → commit/push to master → site updates automatically
 
-```
+  After a deploy, hard-refresh the live site (Cmd/Ctrl + Shift + R) — a service
+  worker (`sw.js`) caches the page and may otherwise show the old version.
 
-## Deployment (GitHub Pages)
+  ### One-time setup (already done)
+  
+  The workflow needs a token to push to the other repo. A Personal Access Token
+  with write access to `honey93.github.io` is stored in this repo under
+  **Settings → Secrets and variables → Actions** as the secret **`DEPLOY_TOKEN`**.
 
-Deployment is automated via **GitHub Actions** (`.github/workflows/deploy.yml`).
-Every push to `master` builds the static site and publishes it.
+  ## Local development
 
-**One-time setup:** In your repo, go to **Settings → Pages → Build and deployment**
-and set **Source = GitHub Actions**.
+  > **Note:** Nuxt 2 / webpack 4 needs the legacy OpenSSL provider on Node 18+.                                  
+  > It's baked into the npm scripts via `cross-env`, so the commands below work as-is.
 
-### Project page vs. user page
+  ```bash
+  npm install          # install dependencies
+  npm run dev          # dev server with hot reload at http://localhost:3000                                     
+  npm run generate     # build the static site into ./dist (root base path "/")
 
-The site is configured for a **project page** (`https://honey93.github.io/Personal-Website/`),
-so the build sets a base path via the `GH_PAGES=project` env var (see the workflow).
+  Editing content
 
-If you instead deploy to a **user page** (`https://honey93.github.io`) or a custom domain,
-remove the `GH_PAGES: project` line from the workflow so the base path stays `/`.
+  All content lives in the Vuex store — no need to touch templates:
 
-### Manual deploy
+  - store/index.js — about text, skills, experience timeline, projects, also-roles
+  - store/blogs.js — articles list
 
-```bash
-GH_PAGES=project npm run generate   # output in ./dist
-# then publish ./dist however you like (e.g. gh-pages branch)
-```
+  Layout/styling lives in pages/*.vue and components/*.vue.
 
-## Editing content
+  Manual deploy (fallback, if Actions is unavailable)
+  
+  npm run generate                     # output in ./dist (base "/")
+  # then publish the CONTENTS of ./dist into the honey93.github.io repo,
+  # keeping a .nojekyll file at its root so the _nuxt/ folder is served.
 
-All content lives in the Vuex store — no need to touch templates:
+  Contact form
+  
+  pages/contact/index.vue posts to Formspree (https://formspree.io/) at
+  https://formspree.io/f/xvovqpyr. Swap that form ID in the form action to
+  point it elsewhere.
+  
+  Tech
 
-- **`store/index.js`** — about text, skills, experience timeline, projects, also-roles
-- **`store/blogs.js`** — articles list
-
-## Contact form
-
-`pages/contact/index.vue` posts to [Formspree](https://formspree.io/) at
-`https://formspree.io/f/xvovqpyr`. To point it at a different form, swap that
-form ID in the form `action`.
+  Nuxt.js (Vue 2) · Vuex · Bootstrap-Vue · Font Awesome · deployed to GitHub Pages.
+  
+  ---
