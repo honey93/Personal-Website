@@ -1,61 +1,63 @@
 <template>
-  <div class="Header container">
-    <div class="Header-section-left">
-      <nuxt-link to="/">HONEY THAKURIA</nuxt-link>
-    </div>
-
-    <div class="Header-section-right">
-      <div>
-        <nuxt-link to="/blogs">Blogs</nuxt-link>
+  <header class="Header">
+    <div class="Header-inner container">
+      <div class="Header-section-left">
+        <nuxt-link to="/">HONEY THAKURIA</nuxt-link>
       </div>
-      <div>
+
+      <nav class="Header-section-right">
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/blogs">Writing</nuxt-link>
         <nuxt-link to="/contact">Contact</nuxt-link>
-      </div>
-      
+      </nav>
     </div>
-  </div>
+  </header>
 </template>
-
 
 <style scoped>
 .Header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid #f1f1f1;
+}
+.Header-inner {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 20px;
-  height: 60px;
+  align-items: center;
+  padding: 16px 20px;
 }
 .Header-section-right {
-  display: Flex;
+  display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  gap: 22px;
 }
-.Header-section-right div:nth-child(1),
-.Header-section-right div:nth-child(2) {
-  margin-right: 10px;
-}
-.Header-section-right div a,.Header-section-left a{
+.Header a {
   text-decoration: none;
-  font-family: Karla;
-font-style: normal;
-font-weight: bold;
-font-size: 16px;
-line-height: 19px;
-
-color: #1E1E1E;
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1e1e1e;
+  transition: color 0.18s ease;
 }
-.Header-section-right div a:hover,
-.Header-section-left a:hover, a.nuxt-link-exact-active {
+.Header-section-left a {
+  letter-spacing: 0.03em;
+}
+.Header a:hover,
+.Header a.nuxt-link-exact-active {
   cursor: pointer;
-  color: #3AA8FF!important;
+  color: #3aa8ff;
+}
+.Header-section-left a.nuxt-link-exact-active {
+  color: #1e1e1e;
 }
 </style>
-
 
 <script>
 export default {
   name: "Header"
 };
 </script>
-
-
