@@ -20,8 +20,7 @@ export const state = () => {
         {
           id: 1,
           group: "AI & Agents",
-          items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool / Function 
-  Calling"]
+          items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool / Function Calling"]
         },
         {
           id: 2,
