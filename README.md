@@ -21,14 +21,16 @@ Personal portfolio of **Honey Thakuria**, Full-Stack Engineer. Built with [Nuxt.
 > so the commands below work as-is.
 
 ```bash
-# install dependencies
-npm install
+#install steps
+ git clone https://github.com/honey93/Personal-Website.git
+  cd Personal-Website
+  npm install
+  npm run build:docs    # the script I added: builds + makes docs/ + .nojekyll
+  git add docs
+  git commit -m "Build docs"
+  git push
 
-# dev server with hot reload at http://localhost:3000
-npm run dev
 
-# generate the static site into ./dist
-npm run generate
 ```
 
 ## Deployment (GitHub Pages)
