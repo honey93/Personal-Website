@@ -41,4 +41,4 @@ jobs:
           git add -A
           git commit -q -m "Deploy from Personal-Website@${GITHUB_SHA}"
           git branch -M master
-          git push -f "https://x-access-token:${DEPLOY_TOKEN}@github.com/honey93/honey93.github.io.git" maste
+          git push -f "https://x-access-token:${DEPLOY_TOKEN}@github.com/honey93/honey93.github.io.git" master
