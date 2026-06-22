@@ -1,0 +1,50 @@
+name: Build and deploy to honey93.github.io
+
+# Builds the Nuxt static site and publishes the output to the
+# honey93.github.io repo, which GitHub Pages serves at https://honey93.github.io/
+#
+# REQUIRED ONE-TIME SETUP (see README / instructions):
+#   Create a Personal Access Token with "repo" scope, then add it to THIS repo
+#   under Settings -> Secrets and variables -> Actions -> New repository secret
+#   with the name:  DEPLOY_TOKEN
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Generate static site (root base path "/")
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+        run: npm run generate
+
+      - name: Add .nojekyll
+        run: touch dist/.nojekyll
+
+      - name: Publish to honey93.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # Personal Access Token (repo scope) stored as a secret in THIS repo.
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: honey93/honey93.github.io
+          publish_branch: master
+          publish_dir: ./dist
+          # Wipe old files so stale hashed assets don't linger and 404.
+          force_orphan: true
+          commit_message: "Deploy from Personal-Website@${{ github.sha }}"
