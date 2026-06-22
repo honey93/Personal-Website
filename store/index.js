@@ -41,7 +41,12 @@ export const state = () => {
         id: 5,
         group: "Cloud & DevOps",
         items: ["AWS (Lambda, SNS, SQS)", "GCP / GAE", "Docker", "GitLab CI", "Blockchain (Nebulas)"]
-      }
+      },
+      {
+          id: 6,
+          group: "AI & Agents",
+          items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool"]
+        }
     ],
 
     // Selected projects
