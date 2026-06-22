@@ -25,16 +25,21 @@ export const state = () => {
         },
         {
           id: 2,
-          group: "Full-Stack & Languages",
-          items: ["JavaScript / TypeScript", "Python", "Java", "Vue / Nuxt.js", "React / React Native", "Angular", "Node.js (Koa / Express)", "Flask", "Spring 
-  Boot", "PWA"]
+          group: "Frontend",
+          items: ["Vue / Nuxt.js", "React / React Native", "Angular", "Service Workers / PWA"]
         },
         {
           id: 3,
+          group: "Backend & Languages",
+          items: ["JavaScript / TypeScript", "Python", "Java", "Node.js (Koa / Express)", "Flask", "Spring Boot", "PHP / Laravel"]
+        },
+        {
+          id: 4,
           group: "Data, Cloud & DevOps",
           items: ["Kafka", "Spark", "Hive / BigQuery", "Postgres", "Redis", "MongoDB", "AWS (Lambda, SNS, SQS)", "GCP / GAE", "Docker", "GitLab CI"]
         }
       ],
+
 
 
     // Selected projects
