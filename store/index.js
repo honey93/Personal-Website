@@ -16,38 +16,26 @@ export const state = () => {
     },
 
     // Core technologies, grouped for the skills section
-    skills: [
-      {
-        id: 1,
-        group: "Languages",
-        items: ["JavaScript / TypeScript", "Python", "Java", "PHP"]
-      },
-      {
-        id: 2,
-        group: "Frontend",
-        items: ["Vue / Nuxt.js", "React / React Native", "Angular", "Service Workers / PWA"]
-      },
-      {
-        id: 3,
-        group: "Backend",
-        items: ["Node.js (Koa / Express)", "Flask", "Spring Boot", "Laravel"]
-      },
-      {
-        id: 4,
-        group: "Data & Streaming",
-        items: ["Kafka", "Spark", "Hive / BigQuery", "Postgres", "Redis", "MongoDB", "Cassandra"]
-      },
-      {
-        id: 5,
-        group: "Cloud & DevOps",
-        items: ["AWS (Lambda, SNS, SQS)", "GCP / GAE", "Docker", "GitLab CI", "Blockchain (Nebulas)"]
-      },
-      {
-          id: 6,
+ skills: [
+        {
+          id: 1,
           group: "AI & Agents",
-          items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool"]
+          items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool / Function 
+  Calling"]
+        },
+        {
+          id: 2,
+          group: "Full-Stack & Languages",
+          items: ["JavaScript / TypeScript", "Python", "Java", "Vue / Nuxt.js", "React / React Native", "Angular", "Node.js (Koa / Express)", "Flask", "Spring 
+  Boot", "PWA"]
+        },
+        {
+          id: 3,
+          group: "Data, Cloud & DevOps",
+          items: ["Kafka", "Spark", "Hive / BigQuery", "Postgres", "Redis", "MongoDB", "AWS (Lambda, SNS, SQS)", "GCP / GAE", "Docker", "GitLab CI"]
         }
-    ],
+      ],
+
 
     // Selected projects
     stuff: [
