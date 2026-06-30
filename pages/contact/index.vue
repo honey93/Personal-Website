@@ -93,20 +93,21 @@ export default {
 
 <style scoped>
 .contact-section {
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 420px);
   padding-top: 60px;
+  padding-bottom: 40px;
 }
 .contact-page-title {
   font-family: Karla, sans-serif;
   font-weight: 700;
   font-size: 40px;
   letter-spacing: -0.02em;
-  color: #111827;
+  color: var(--text);
 }
 .contact-sub {
   font-family: Karla, sans-serif;
   font-size: 19px;
-  color: #6b7280;
+  color: var(--text-subtle);
   margin-top: 8px;
   max-width: 640px;
 }
@@ -115,7 +116,7 @@ export default {
 }
 .links a {
   text-decoration: none;
-  color: #9ca3af;
+  color: var(--text-faint);
   margin-right: 18px;
   transition: color 0.18s ease;
 }
@@ -131,20 +132,20 @@ export default {
   max-width: 560px;
   margin-top: 48px;
   padding: 28px;
-  border: 1px solid #eef0f3;
+  border: 1px solid var(--border);
   border-radius: 14px;
-  background: #fafbfc;
+  background: var(--bg-elev);
 }
 .form-title {
   font-family: Karla, sans-serif;
   font-weight: 700;
   font-size: 22px;
-  color: #111827;
+  color: var(--text);
   margin-bottom: 18px;
 }
 .submit-btn {
-  background: #3aa8ff;
-  border-color: #3aa8ff;
+  background: var(--accent);
+  border-color: var(--accent);
   font-weight: 700;
   padding: 8px 28px;
 }

@@ -7,17 +7,32 @@
           <p class="heroHello">Hello, I'm</p>
           <h1 class="heroName">Honey Thakuria</h1>
           <p class="heroDescription">
-            Full-Stack Engineer building end-to-end systems for masses.
+            Full-Stack Engineer building end-to-end systems at scale.
           </p>
           <p class="heroTyping">
             I create things with
             <span class="techColor">{{ tech }}</span>
             <span v-if="showTyping" class="caret">|</span>
           </p>
+          <p class="hero-cta-hint">Explore <i class="fas fa-arrow-down"></i></p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#experience">View experience</a>
-            <nuxt-link class="btn btn-ghost" to="/blogs">Articles &amp; Talks</nuxt-link>
-            <nuxt-link class="btn btn-ghost" to="/contact">Get in touch</nuxt-link>
+            <a class="btn btn-cta" href="#experience" @click.prevent="scrollTo('experience')">
+              <i class="fas fa-briefcase"></i> Experience
+              <i class="fas fa-chevron-down trail"></i>
+            </a>
+            <nuxt-link class="btn btn-cta" to="/blogs">
+              <i class="fas fa-pen-nib"></i> Articles &amp; Talks
+            </nuxt-link>
+            <a class="btn btn-cta" href="/resume.pdf" target="_blank" rel="noopener">
+              <i class="fas fa-download"></i> Resume
+            </a>
+            <nuxt-link class="btn btn-cta" to="/contact">
+              <i class="fas fa-paper-plane"></i> Get in touch
+            </nuxt-link>
+            <a class="btn btn-cta" href="#projects" @click.prevent="scrollTo('projects')">
+              <i class="fas fa-folder-open"></i> Projects
+              <i class="fas fa-chevron-down trail"></i>
+            </a>
           </div>
           <div class="hero-social">
             <a href="https://www.linkedin.com/in/honeythakuria/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -33,6 +48,7 @@
 
       <!-- ABOUT -->
       <div class="section" id="about">
+        <p class="sectionEyebrow"><span class="num">01</span> Get to know me</p>
         <h2 class="sectionTitle">About</h2>
         <p class="aboutSummary">{{ $store.state.about.summary }}</p>
         <ul class="highlights">
@@ -44,6 +60,7 @@
 
       <!-- SKILLS -->
       <div class="section" id="skills">
+        <p class="sectionEyebrow"><span class="num">02</span> What I work with</p>
         <h2 class="sectionTitle">Skills &amp; Tools</h2>
         <div class="skills-grid">
           <div class="skill-card" v-for="skill in $store.state.skills" :key="skill.id">
@@ -55,8 +72,49 @@
         </div>
       </div>
 
+      <!-- PROJECTS -->
+      <div class="section" id="projects">
+        <p class="sectionEyebrow"><span class="num">03</span> Things I've built</p>
+        <h2 class="sectionTitle">Open-Source Projects</h2>
+        <p class="projectsIntro">
+          A few things I've built in the open. More on
+          <a href="https://github.com/honey93" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+        <div class="projects-grid">
+          <a
+            class="project-card"
+            v-for="project in $store.state.projects"
+            :key="project.id"
+            :href="project.url"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="project-thumb" v-if="project.image">
+              <img :src="'/' + project.image" :alt="project.name" />
+            </div>
+            <div class="project-thumb project-thumb--placeholder" v-else>
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="project-body">
+              <div class="project-head">
+                <h3 class="project-name">{{ project.name }}</h3>
+                <div class="project-stats">
+                  <span class="stat" v-if="project.stars"><i class="fas fa-star"></i> {{ project.stars }}</span>
+                  <span class="stat" v-if="project.forks"><i class="fas fa-code-branch"></i> {{ project.forks }}</span>
+                </div>
+              </div>
+              <p class="project-desc">{{ project.description }}</p>
+              <div class="project-tags">
+                <span class="tag" v-for="(t, i) in project.tech" :key="i">{{ t }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <!-- EXPERIENCE TIMELINE -->
       <div class="section" id="experience">
+        <p class="sectionEyebrow"><span class="num">04</span> Where I've worked</p>
         <h2 class="sectionTitle">Experience</h2>
         <div class="timeline">
           <div class="timeline-item" v-for="job in $store.state.experience" :key="job.id">
@@ -155,6 +213,12 @@ export default {
   methods: {
     type(text) {
       this.tech += text;
+    },
+    scrollTo(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   }
 };
@@ -180,7 +244,7 @@ export default {
 .heroHello {
   font-family: Karla, sans-serif;
   font-size: 24px;
-  color: #6b7280;
+  color: var(--text-subtle);
   margin-bottom: 4px;
 }
 .heroName {
@@ -189,71 +253,102 @@ export default {
   font-size: 64px;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  color: #111827;
+  color: var(--text);
   margin-bottom: 16px;
 }
 .heroDescription {
   font-family: Karla, sans-serif;
   font-size: 26px;
-  color: #374151;
+  color: var(--text-muted);
   margin-bottom: 8px;
 }
 .heroTyping {
   font-family: Karla, sans-serif;
   font-size: 22px;
-  color: #6b7280;
+  color: var(--text-subtle);
   min-height: 30px;
   margin-bottom: 28px;
 }
 .techColor {
-  color: #3aa8ff;
+  color: var(--accent);
   font-weight: 700;
 }
 .caret {
-  color: #3aa8ff;
+  color: var(--accent);
   font-weight: 700;
+}
+.hero-cta-hint {
+  font-family: Karla, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+}
+.hero-cta-hint i {
+  color: var(--accent);
+  margin-left: 4px;
+  animation: hintBob 1.6s ease-in-out infinite;
+}
+@keyframes hintBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
 }
 .hero-cta {
   display: flex;
-  gap: 14px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 18px;
   flex-wrap: wrap;
 }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: Karla, sans-serif;
   font-weight: 700;
   font-size: 16px;
-  padding: 12px 26px;
+  padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.18s ease;
 }
-.btn-primary {
-  background: #3aa8ff;
-  color: #fff;
-  box-shadow: 0 6px 16px rgba(58, 168, 255, 0.32);
+.btn-cta {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  cursor: pointer;
 }
-.btn-primary:hover {
-  background: #1f93ef;
+.btn-cta i:first-child {
+  color: var(--accent);
+  font-size: 14px;
+  transition: color 0.18s ease;
+}
+.btn-cta .trail {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-left: 2px;
+}
+.btn-cta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
   transform: translateY(-2px);
 }
-.btn-ghost {
-  border: 2px solid #e5e7eb;
-  color: #111827;
+.btn-cta:hover i {
+  color: var(--accent);
 }
-.btn-ghost:hover {
-  border-color: #3aa8ff;
-  color: #3aa8ff;
+.btn-cta:hover .trail {
+  transform: translateY(2px);
 }
 .hero-social a {
-  color: #9ca3af;
+  color: var(--text-faint);
   font-size: 26px;
   margin-right: 18px;
   transition: color 0.18s ease;
 }
 .hero-social a:hover {
-  color: #3aa8ff;
+  color: var(--accent);
 }
 .hero-image-wrap {
   flex: 0 0 320px;
@@ -268,16 +363,32 @@ export default {
 
 /* ---------- Sections ---------- */
 .section {
-  padding: 56px 0;
-  border-top: 1px solid #f1f1f1;
+  padding: 72px 0;
+  border-top: 1px solid var(--border-soft);
+}
+.sectionEyebrow {
+  font-family: Karla, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sectionEyebrow .num {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 .sectionTitle {
   font-family: Karla, sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 38px;
   letter-spacing: -0.02em;
-  color: #111827;
-  margin-bottom: 28px;
+  color: var(--text);
+  margin-bottom: 32px;
   position: relative;
   display: inline-block;
 }
@@ -288,7 +399,7 @@ export default {
   bottom: -8px;
   width: 48px;
   height: 4px;
-  background: #3aa8ff;
+  background: var(--accent);
   border-radius: 2px;
 }
 
@@ -297,7 +408,7 @@ export default {
   font-family: Karla, sans-serif;
   font-size: 20px;
   line-height: 1.6;
-  color: #374151;
+  color: var(--text-muted);
   max-width: 820px;
   margin-bottom: 24px;
 }
@@ -312,10 +423,10 @@ export default {
 .highlights li {
   font-family: Karla, sans-serif;
   font-size: 17px;
-  color: #374151;
+  color: var(--text-muted);
 }
 .highlights i {
-  color: #3aa8ff;
+  color: var(--accent);
   margin-right: 8px;
 }
 
@@ -326,21 +437,21 @@ export default {
   gap: 20px;
 }
 .skill-card {
-  background: #fafbfc;
-  border: 1px solid #eef0f3;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
   transition: box-shadow 0.18s ease, transform 0.18s ease;
 }
 .skill-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px var(--card-shadow);
   transform: translateY(-2px);
 }
 .skill-group {
   font-family: Karla, sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text);
   margin-bottom: 12px;
 }
 .skill-tags {
@@ -351,9 +462,118 @@ export default {
 .tag {
   font-family: Karla, sans-serif;
   font-size: 14px;
-  color: #1f6fb0;
-  background: #e9f5ff;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
   padding: 5px 12px;
+  border-radius: 999px;
+}
+
+/* ---------- Projects ---------- */
+.projectsIntro {
+  font-family: Karla, sans-serif;
+  font-size: 17px;
+  color: var(--text-subtle);
+  margin-top: -12px;
+  margin-bottom: 28px;
+}
+.projectsIntro a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+.projectsIntro a:hover {
+  text-decoration: underline;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.project-card:hover {
+  box-shadow: 0 14px 30px var(--card-shadow);
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+.project-thumb {
+  height: 168px;
+  overflow: hidden;
+  background: var(--accent-soft);
+}
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-thumb--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 44px;
+}
+.project-body {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.project-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.project-name {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+}
+.project-stats {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.project-stats .stat {
+  font-family: Karla, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-subtle);
+}
+.project-stats .stat i {
+  color: var(--accent);
+  margin-right: 3px;
+}
+.project-desc {
+  font-family: Karla, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  flex: 1;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.project-tags .tag {
+  font-family: Karla, sans-serif;
+  font-size: 13px;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  padding: 4px 11px;
   border-radius: 999px;
 }
 
@@ -369,7 +589,7 @@ export default {
   top: 6px;
   bottom: 6px;
   width: 2px;
-  background: #e5e7eb;
+  background: var(--border);
 }
 .timeline-item {
   position: relative;
@@ -385,9 +605,9 @@ export default {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #3aa8ff;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #3aa8ff;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 .job-head {
   display: flex;
@@ -399,18 +619,18 @@ export default {
   font-family: Karla, sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text);
 }
 .job-company {
   font-family: Karla, sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #3aa8ff;
+  color: var(--accent);
 }
 .job-meta {
   font-family: Karla, sans-serif;
   font-size: 15px;
-  color: #9ca3af;
+  color: var(--text-faint);
   margin: 4px 0 12px;
 }
 .job-bullets {
@@ -421,7 +641,7 @@ export default {
   font-family: Karla, sans-serif;
   font-size: 16px;
   line-height: 1.55;
-  color: #374151;
+  color: var(--text-muted);
   margin-bottom: 6px;
 }
 .also-roles {
@@ -430,7 +650,7 @@ export default {
 .also-title {
   font-family: Karla, sans-serif;
   font-size: 18px;
-  color: #9ca3af;
+  color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 12px;
@@ -444,19 +664,19 @@ export default {
 .also-item span {
   font-family: Karla, sans-serif;
   font-size: 16px;
-  color: #374151;
+  color: var(--text-muted);
   text-decoration: none;
-  background: #fafbfc;
-  border: 1px solid #eef0f3;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px 16px;
   display: inline-block;
 }
 .also-item a:hover {
-  border-color: #3aa8ff;
+  border-color: var(--accent);
 }
 .also-dur {
-  color: #9ca3af;
+  color: var(--text-faint);
   margin-left: 6px;
 }
 

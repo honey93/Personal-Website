@@ -39,6 +39,43 @@ export const state = () => {
       }
     ],
 
+    // Open-source projects worth highlighting (stars/forks from GitHub)
+    projects: [
+      {
+        id: 1,
+        name: "OrderKitchen",
+        description:
+          "Real-time restaurant order management — kitchen and waiter screens stay in sync over WebSockets as orders move from table to kitchen to served.",
+        tech: ["Node.js", "Socket.io", "React", "MongoDB"],
+        image: "orderApp.png",
+        url: "https://github.com/honey93/OrderKitchen",
+        stars: 81,
+        forks: 56
+      },
+      {
+        id: 2,
+        name: "VueSearchExample",
+        description:
+          "Responsive client-side search built with Vue.js — the companion project to my freeCodeCamp article on building a search UI from scratch.",
+        tech: ["Vue.js", "JavaScript"],
+        image: "vueSearch.png",
+        url: "https://github.com/honey93/VueSearchExample",
+        stars: 16,
+        forks: 12
+      },
+      {
+        id: 3,
+        name: "distributed_stories",
+        description:
+          "A decentralized stories DApp built on the Nebulas blockchain platform, exploring on-chain content with a Vue front-end.",
+        tech: ["Vue.js", "Nebulas", "Smart Contracts"],
+        image: null,
+        url: "https://github.com/honey93/distributed_stories",
+        stars: 2,
+        forks: 0
+      }
+    ],
+
     // Talks, meetups & sessions (most are on YouTube)
     talks: [
       {
@@ -90,6 +127,7 @@ export const state = () => {
         location: "Bengaluru, India",
         bullets: [
           "Full-Stack Developer in the AI, Data & Analytics org.",
+          "AI Agents & MCP: built AI agents and MCP (Model Context Protocol) servers that expose data and tooling to LLMs, enabling agentic workflows over the data platform.",
           "Data Reliability Engineering: built a real-time marketing data attribute tracking system measuring data quality, health metrics and end-to-end lineage across hundreds of Hive tables and Kafka topics.",
           "Data Lineage: built Kafka-producer-powered SDKs that feed dozens of processing systems, tracing lineage from source tables through the data lake to analytics dashboards.",
           "Datamap: contributed to a product in the clean-data domain."

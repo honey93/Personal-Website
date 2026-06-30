@@ -82,12 +82,12 @@ export default {
   font-weight: 700;
   font-size: 40px;
   letter-spacing: -0.02em;
-  color: #111827;
+  color: var(--text);
 }
 .blogs-sub {
   font-family: Karla, sans-serif;
   font-size: 18px;
-  color: #6b7280;
+  color: var(--text-subtle);
   margin-bottom: 28px;
 }
 .group-title {
@@ -95,7 +95,7 @@ export default {
   font-weight: 700;
   font-size: 24px;
   letter-spacing: -0.01em;
-  color: #111827;
+  color: var(--text);
   margin: 8px 0 18px;
   position: relative;
   display: inline-block;
@@ -107,7 +107,7 @@ export default {
   bottom: -6px;
   width: 36px;
   height: 3px;
-  background: #3aa8ff;
+  background: var(--accent);
   border-radius: 2px;
 }
 .talks-heading {
@@ -146,14 +146,14 @@ export default {
   font-family: Karla, sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: #6b7280;
+  color: var(--text-subtle);
   margin-top: 8px;
   margin-bottom: 0;
 }
 .blogImageParent {
   height: 200px;
   overflow: hidden;
-  background: #f3f4f6;
+  background: var(--bg-elev);
 }
 .blogImage {
   width: 100%;
@@ -161,14 +161,14 @@ export default {
   object-fit: cover;
 }
 .blog-card {
-  border: 1px solid #eef0f3;
+  border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   height: 100%;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .blog-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 28px var(--card-shadow);
   transform: translateY(-3px);
 }
 .blog-content {
@@ -179,29 +179,29 @@ export default {
   font-weight: 700;
   font-size: 19px;
   line-height: 1.3;
-  color: #111827;
+  color: var(--text);
   margin-bottom: 10px;
 }
 .blog-meta {
   font-family: Karla, sans-serif;
   font-size: 14px;
-  color: #9ca3af;
+  color: var(--text-faint);
   display: flex;
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
 }
 .publication {
-  color: #3aa8ff;
+  color: var(--accent);
   font-weight: 700;
 }
 .claps {
   margin-left: auto;
-  color: #6b7280;
+  color: var(--text-subtle);
 }
 .blog a {
   text-decoration: none;
-  color: #111827;
+  color: var(--text);
 }
 .blog {
   margin-bottom: 24px;
