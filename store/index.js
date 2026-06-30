@@ -16,79 +16,66 @@ export const state = () => {
     },
 
     // Core technologies, grouped for the skills section
- skills: [
-        {
-          id: 1,
-          group: "AI & Agents",
-          items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool / Function Calling"]
-        },
-        {
-          id: 2,
-          group: "Frontend",
-          items: ["Vue / Nuxt.js", "React / React Native", "Angular", "Service Workers / PWA"]
-        },
-        {
-          id: 3,
-          group: "Backend & Languages",
-          items: ["JavaScript / TypeScript", "Python", "Java", "Node.js (Koa / Express)", "Flask", "Spring Boot", "PHP / Laravel"]
-        },
-        {
-          id: 4,
-          group: "Data, Cloud & DevOps",
-          items: ["Kafka", "Spark", "Hive / BigQuery", "Postgres", "Redis", "MongoDB", "AWS (Lambda, SNS, SQS)", "GCP / GAE", "Docker", "GitLab CI"]
-        }
-      ],
-
-
-
-    // Selected projects
-    stuff: [
+    skills: [
       {
         id: 1,
-        title: "EventQ — Live Q&A Portal",
-        url: "http://eventq.online/",
-        publication: "Co-founder · Startup",
-        description:
-          "Smart Q&A platform that surfaces the top audience questions in minutes. Launched at 20+ conferences. Built with Angular, Node.js, Socket.io, PHP & Postgres.",
-        imageUrl: "eventQ.png"
+        group: "AI & Agents",
+        items: ["LLM Apps (Claude / GPT)", "AI Agents", "MCP (Model Context Protocol)", "A2A (Agent-to-Agent)", "RAG", "Prompt Engineering", "Tool Calling"]
       },
       {
         id: 2,
-        title: "Realtime Order App",
-        url: "https://github.com/honey93/OrderKitchen",
-        publication: "Open-Source",
-        description:
-          "Real-time kitchen ordering app demonstrating live updates with Socket.io, React, Node.js and MongoDB.",
-        imageUrl: "orderApp.png"
+        group: "Frontend",
+        items: ["Vue / Nuxt.js", "React / React Native", "Angular", "Service Workers / PWA"]
       },
       {
         id: 3,
-        title: "Potential — Reading Habit App",
-        url: "https://trypotential.com/",
-        publication: "Startup",
-        description:
-          "Mobile app that helps people build a daily reading habit, built with React Native.",
-        imageUrl: "potential.png"
+        group: "Backend & Languages",
+        items: ["JavaScript / TypeScript", "Python", "Java", "Node.js (Koa / Express)", "Flask", "Spring Boot", "PHP / Laravel"]
       },
       {
         id: 4,
-        title: "Wonders of the World",
-        url: "https://github.com/honey93/VueSearchExample",
-        publication: "Open-Source",
+        group: "Data, Cloud & DevOps",
+        items: ["Kafka", "Spark", "Hive / BigQuery", "Postgres", "Redis", "MongoDB", "AWS (Lambda, SNS, SQS)", "GCP / GAE", "Docker", "GitLab CI"]
+      }
+    ],
+
+    // Talks, meetups & sessions (most are on YouTube)
+    talks: [
+      {
+        id: 1,
+        title: "Server-Side Rendered Apps using Nuxt.js",
+        url: "https://www.youtube.com/watch?v=6H0vPtW-Gzk",
+        videoId: "6H0vPtW-Gzk",
+        event: "Tech Talk",
         description:
-          "Responsive Vue.js showcase with live UI search — the companion project to my freeCodeCamp article on responsive search.",
-        imageUrl: "vueSearch.png"
+          "A hands-on walkthrough of building SEO-friendly, server-side-rendered applications with Nuxt.js (Vue)."
       },
       {
-        id: 5,
-        title: "DApp on Nuxt.js + Nebulas",
-        url:
-          "https://medium.freecodecamp.org/architecting-dapp-using-nuxt-js-nebulas-fc00712ae341",
-        publication: "Hackathon · Open-Source",
+        id: 2,
+        title: "Global Vue Meetup — Vue.js in Production",
+        url: "https://www.youtube.com/watch?v=G-rqFVTG0xE&t=1196s",
+        videoId: "G-rqFVTG0xE",
+        event: "Global Vue Meetup",
         description:
-          "Decentralized app architected on the Nebulas blockchain with a server-side-rendered Nuxt.js front-end.",
-        imageUrl:
-          "https://cdn-images-1.medium.com/max/1600/1*1LSHpbDThueykKQQeCkAug.png"
+          "Speaking at the Global Vue Meetup alongside Daniel Madalitso Phiri on building real-world apps with Vue.js."
+      },
+      {
+        id: 3,
+        title: "Intel RealSense + Unity3D Magic",
+        url: "https://www.youtube.com/watch?v=xTCjm4-vc6Y",
+        videoId: "xTCjm4-vc6Y",
+        event: "SRJNA",
+        description:
+          "Demoing interactive experiences powered by the Intel RealSense depth camera and Unity3D."
+      },
+      {
+        id: 4,
+        title: "Social Crowd Fund — OST Challenge",
+        url: "https://www.youtube.com/watch?v=3dzkrYKWLCk",
+        videoId: "3dzkrYKWLCk",
+        event: "OST Challenge",
+        description:
+          "Presenting a decentralized social crowdfunding concept built for the OST blockchain challenge."
       }
     ],
 
