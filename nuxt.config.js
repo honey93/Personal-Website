@@ -43,6 +43,8 @@ module.exports = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: `${base}favicon.ico` },
+      { rel: "shortcut icon", type: "image/x-icon", href: `${base}favicon.ico` },
+      { rel: "apple-touch-icon", href: `${base}icon.png` },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.7.2/css/all.css",

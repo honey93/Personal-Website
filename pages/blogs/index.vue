@@ -1,10 +1,40 @@
 <template>
   <div>
     <section class="container">
-      <h2 class="blogs-page-title">Writing</h2>
+      <h2 class="blogs-page-title">Articles &amp; Talks</h2>
       <p class="blogs-sub">
-        Selected articles published on freeCodeCamp, Codeburst, HackerNoon and Medium.
+        Things I've written and spoken about — articles on freeCodeCamp, Codeburst,
+        HackerNoon and Medium, plus conference talks, meetups and sessions.
       </p>
+
+      <!-- TALKS -->
+      <h3 class="group-title">Talks &amp; Sessions</h3>
+      <div class="row" v-if="$store.state.talks.length">
+        <div class="col-md-6 blog" v-for="talk in $store.state.talks" :key="'talk-' + talk.id">
+          <a :href="talk.url" target="_blank" rel="noopener">
+            <div class="blog-card">
+              <div class="blogImageParent talk-thumb">
+                <img
+                  :src="'https://img.youtube.com/vi/' + talk.videoId + '/hqdefault.jpg'"
+                  class="blogImage"
+                  :alt="talk.title"
+                />
+                <span class="play-badge"><i class="fas fa-play"></i></span>
+              </div>
+              <div class="blog-content">
+                <h4 class="blog-title">{{ talk.title }}</h4>
+                <div class="blog-meta">
+                  <span class="publication">{{ talk.event }}</span>
+                </div>
+                <p class="talk-desc">{{ talk.description }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ARTICLES -->
+      <h3 class="group-title talks-heading">Articles</h3>
       <div class="row" v-if="$store.state.blogs.blogs.length">
         <div class="col-md-6 blog" v-for="blog in $store.state.blogs.blogs" :key="blog.id">
           <a :href="blog.url" target="_blank" rel="noopener">
@@ -32,13 +62,13 @@
 <script>
 export default {
   head: {
-    title: "Writing — Honey Thakuria",
+    title: "Articles & Talks — Honey Thakuria",
     meta: [
       {
         hid: "description",
         name: "description",
         content:
-          "Honey Thakuria writes for leading publications like freeCodeCamp, Codeburst and HackerNoon. Read his articles on JavaScript, Vue, microservices and blockchain."
+          "Articles by Honey Thakuria for freeCodeCamp, Codeburst and HackerNoon, plus conference talks and meetup sessions on Vue, Nuxt, microservices and more."
       }
     ]
   }
@@ -58,7 +88,67 @@ export default {
   font-family: Karla, sans-serif;
   font-size: 18px;
   color: #6b7280;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+}
+.group-title {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: #111827;
+  margin: 8px 0 18px;
+  position: relative;
+  display: inline-block;
+}
+.group-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 36px;
+  height: 3px;
+  background: #3aa8ff;
+  border-radius: 2px;
+}
+.talks-heading {
+  margin-top: 36px;
+}
+.talk-thumb {
+  position: relative;
+  background: #000;
+}
+.talk-thumb .blogImage {
+  object-fit: cover;
+}
+.play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(58, 168, 255, 0.92);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  padding-left: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.blog-card:hover .play-badge {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #1f93ef;
+}
+.talk-desc {
+  font-family: Karla, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b7280;
+  margin-top: 8px;
+  margin-bottom: 0;
 }
 .blogImageParent {
   height: 200px;

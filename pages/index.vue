@@ -16,6 +16,7 @@
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="#experience">View experience</a>
+            <nuxt-link class="btn btn-ghost" to="/blogs">Articles &amp; Talks</nuxt-link>
             <nuxt-link class="btn btn-ghost" to="/contact">Get in touch</nuxt-link>
           </div>
           <div class="hero-social">
@@ -86,29 +87,6 @@
         </div>
       </div>
 
-      <!-- PROJECTS -->
-      <div class="section" id="projects">
-        <h2 class="sectionTitle">Selected Work</h2>
-        <div class="projects-grid">
-          <a
-            class="project-card"
-            v-for="project in $store.state.stuff"
-            :key="project.id"
-            :href="project.url"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="project-image">
-              <img :src="project.imageUrl" :alt="project.title" />
-            </div>
-            <div class="project-body">
-              <span class="project-tag">{{ project.publication }}</span>
-              <h3 class="project-title">{{ project.title }}</h3>
-              <p class="project-desc">{{ project.description }}</p>
-            </div>
-          </a>
-        </div>
-      </div>
     </section>
   </div>
 </template>
@@ -160,6 +138,10 @@ export default {
       tech: "",
       timer: null,
       arrayTech: [
+        "AI Agents",
+        "MCP",
+        "LLM Apps",
+        "RAG",
         "Vue & Nuxt",
         "React",
         "Node.js",
@@ -476,60 +458,6 @@ export default {
 .also-dur {
   color: #9ca3af;
   margin-left: 6px;
-}
-
-/* ---------- Projects ---------- */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-.project-card {
-  display: block;
-  text-decoration: none;
-  background: #fff;
-  border: 1px solid #eef0f3;
-  border-radius: 14px;
-  overflow: hidden;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.project-card:hover {
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
-}
-.project-image {
-  height: 180px;
-  overflow: hidden;
-  background: #f3f4f6;
-}
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.project-body {
-  padding: 18px 20px 22px;
-}
-.project-tag {
-  font-family: Karla, sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #3aa8ff;
-  font-weight: 700;
-}
-.project-title {
-  font-family: Karla, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #111827;
-  margin: 6px 0 8px;
-}
-.project-desc {
-  font-family: Karla, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #6b7280;
 }
 
 /* ---------- Responsive ---------- */

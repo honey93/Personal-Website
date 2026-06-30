@@ -7,7 +7,7 @@
 
       <nav class="Header-section-right">
         <nuxt-link to="/">Home</nuxt-link>
-        <nuxt-link to="/blogs">Writing</nuxt-link>
+        <nuxt-link to="/blogs">Articles &amp; Talks</nuxt-link>
         <nuxt-link to="/contact">Contact</nuxt-link>
       </nav>
     </div>
