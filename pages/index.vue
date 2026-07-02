@@ -7,7 +7,7 @@
           <p class="heroHello">Hello, I'm</p>
           <h1 class="heroName">Honey Thakuria</h1>
           <p class="heroDescription">
-            Full-Stack Engineer building end-to-end systems at scale.
+            Full-Stack Engineer building end-to-end systems at scale, with deep Data &amp; AI expertise.
           </p>
           <p class="heroTyping">
             I create things with
@@ -31,6 +31,10 @@
             </nuxt-link>
             <a class="btn btn-cta" href="#projects" @click.prevent="scrollTo('projects')">
               <i class="fas fa-folder-open"></i> Projects
+              <i class="fas fa-chevron-down trail"></i>
+            </a>
+            <a class="btn btn-cta" href="#patents" @click.prevent="scrollTo('patents')">
+              <i class="fas fa-certificate"></i> Patents
               <i class="fas fa-chevron-down trail"></i>
             </a>
           </div>
@@ -112,9 +116,33 @@
         </div>
       </div>
 
+      <!-- PATENTS -->
+      <div class="section" id="patents">
+        <p class="sectionEyebrow"><span class="num">04</span> Inventions</p>
+        <h2 class="sectionTitle">Patents</h2>
+        <p class="projectsIntro">
+          Filed patent applications from my work on AI agents and ML systems at Intuit.
+        </p>
+        <div class="patents-grid">
+          <div class="patent-card" v-for="patent in $store.state.patents" :key="patent.id">
+            <div class="patent-head">
+              <i class="fas fa-certificate patent-icon"></i>
+              <span class="patent-status">{{ patent.status }}</span>
+            </div>
+            <h3 class="patent-title">{{ patent.title }}</h3>
+            <ul class="patent-meta">
+              <li><span class="patent-label">Assignee</span> {{ patent.assignee }}</li>
+              <li><span class="patent-label">Reference</span> {{ patent.reference }}</li>
+              <li><span class="patent-label">Application</span> {{ patent.applicationNumber }}</li>
+              <li><span class="patent-label">Filed</span> {{ patent.filed }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- EXPERIENCE TIMELINE -->
       <div class="section" id="experience">
-        <p class="sectionEyebrow"><span class="num">04</span> Where I've worked</p>
+        <p class="sectionEyebrow"><span class="num">05</span> Where I've worked</p>
         <h2 class="sectionTitle">Experience</h2>
         <div class="timeline">
           <div class="timeline-item" v-for="job in $store.state.experience" :key="job.id">
@@ -179,13 +207,13 @@ export default {
   },
   head() {
     return {
-      title: "Honey Thakuria — Full-Stack Engineer",
+      title: "Honey Thakuria — Full-Stack Engineer · Data & AI",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
-            "Honey Thakuria is a Full-Stack Engineer with 10+ years across data, web and cloud — currently at Intuit. Open-source contributor, tech blogger and mentor. Explore projects, experience and writing."
+            "Honey Thakuria is a Full-Stack Engineer with deep Data & AI expertise and 10+ years across data, web and cloud — currently building AI agents, MCP servers and clickstream data platforms at Intuit. Open-source contributor, tech blogger and mentor. Explore projects, experience and writing."
         }
       ]
     };
@@ -575,6 +603,75 @@ export default {
   background: var(--accent-soft);
   padding: 4px 11px;
   border-radius: 999px;
+}
+
+/* ---------- Patents ---------- */
+.patents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+}
+.patent-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 22px 24px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.patent-card:hover {
+  box-shadow: 0 12px 28px var(--card-shadow);
+  transform: translateY(-3px);
+}
+.patent-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.patent-icon {
+  color: var(--accent);
+  font-size: 22px;
+}
+.patent-status {
+  font-family: Karla, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.patent-title {
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.35;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.patent-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.patent-meta li {
+  font-family: Karla, sans-serif;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+.patent-label {
+  display: inline-block;
+  min-width: 96px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 
 /* ---------- Timeline ---------- */

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Honey Thakuria — Resume</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: #1f9bf0;
+    --accent-dark: #0f6fb5;
+    --ink: #1f2933;
+    --muted: #52606d;
+    --faint: #7b8794;
+    --line: #e2e8ef;
+  }
+  html, body {
+    font-family: "Karla", "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.4px;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  header {
+    background: #f7fafc;
+    color: var(--ink);
+    text-align: center;
+    padding: 18px 24px 15px;
+    border-bottom: 3px solid var(--accent);
+  }
+  header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+  }
+  .contact {
+    margin-top: 7px;
+    font-size: 9.6px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: var(--muted);
+  }
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact i { margin-right: 4px; color: var(--accent); opacity: 0.9; }
+
+  /* Body columns */
+  .body { display: flex; flex: 1; }
+  .left {
+    width: 34%;
+    padding: 16px 18px 20px;
+    background: #f7fafc;
+    border-right: 1px solid var(--line);
+  }
+  .right { width: 66%; padding: 16px 20px 20px; }
+
+  h2.sec {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+  .block { margin-bottom: 14px; }
+  .left .block { margin-bottom: 15px; }
+
+  p { margin-bottom: 5px; }
+  ul { list-style: none; }
+  .bullets li {
+    position: relative;
+    padding-left: 11px;
+    margin-bottom: 3px;
+    color: var(--muted);
+  }
+  .bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  a { color: var(--accent-dark); }
+
+  /* Skills */
+  .skill-group { margin-bottom: 7px; }
+  .skill-group .g {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 9.6px;
+    margin-bottom: 1px;
+  }
+  .skill-group .v { color: var(--muted); }
+
+  /* Experience */
+  .job { margin-bottom: 11px; }
+  .job .row1 { display: flex; justify-content: space-between; align-items: baseline; }
+  .job .role { font-weight: 700; font-size: 11px; color: var(--ink); }
+  .job .dates { color: var(--faint); font-size: 8.8px; white-space: nowrap; }
+  .job .row2 { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+  .job .company { font-weight: 700; color: var(--accent-dark); font-size: 9.8px; }
+  .job .loc { color: var(--faint); font-size: 8.8px; }
+
+  /* Patents */
+  .patent { margin-bottom: 8px; }
+  .patent .pt { font-weight: 700; color: var(--ink); }
+  .patent .pmeta { color: var(--muted); font-size: 8.9px; }
+  .patent .status {
+    display: inline-block;
+    font-size: 7.6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 1px 6px;
+    border-radius: 8px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .talk { margin-bottom: 6px; color: var(--muted); }
+  .talk .tt { font-weight: 700; color: var(--ink); }
+  .talk .ev { color: var(--accent-dark); }
+
+  .ach li { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Honey Thakuria</h1>
+    <div class="contact">
+      <span><i>&#127760;</i><a href="https://honey93.github.io/">honey93.github.io</a></span>
+      <span><i>&#128188;</i><a href="https://www.linkedin.com/in/honeythakuria/">linkedin.com/in/honeythakuria</a></span>
+      <span><i>&#9993;</i><a href="mailto:thakuria.honey@gmail.com">thakuria.honey@gmail.com</a></span>
+      <span><i>&#128222;</i>+91 9924191992</span>
+    </div>
+  </header>
+
+  <div class="body">
+    <!-- LEFT COLUMN -->
+    <div class="left">
+      <div class="block">
+        <h2 class="sec">Summary</h2>
+        <p>Full-Stack Engineer with deep Data &amp; AI expertise, building end-to-end systems at scale over 10+ years across data, web and cloud. I architect event-driven data platforms, build AI agents &amp; MCP servers, and ship front-ends for millions of users. Open-source contributor, tech blogger and mentor.</p>
+      </div>
+
+      <div class="block">
+        <h2 class="sec">Skills</h2>
+        <div class="skill-group">
+          <div class="g">AI &amp; Agents</div>
+          <div class="v">LLM Apps (Claude / GPT), AI Agents, MCP, A2A, RAG, Prompt Engineering, Tool Calling</div>
+        </div>
+        <div class="skill-group">
+          <div class="g">Frontend</div>
+          <div class="v">Vue / Nuxt.js, React / React Native, Angular, Service Workers / PWA</div>
+        </div>
+        <div class="skill-group">
+          <div class="g">Backend &amp; Languages</div>
+          <div class="v">JavaScript / TypeScript, Python, Java, Node.js (Koa / Express), Flask, Spring Boot, PHP / Laravel</div>
+        </div>
+        <div class="skill-group">
+          <div class="g">Data, Cloud &amp; DevOps</div>
+          <div class="v">Kafka, Spark, Hive / BigQuery, Postgres, Redis, MongoDB, AWS (Lambda, SNS, SQS), GCP / GAE, Docker, GitLab CI</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2 class="sec">Education</h2>
+        <p><strong>Bachelor of Technology (B.Tech), Computer Science</strong><br />
+        Nirma University, Ahmedabad, India &middot; 2011&ndash;2015</p>
+      </div>
+
+      <div class="block">
+        <h2 class="sec">Achievements</h2>
+        <ul class="bullets ach">
+          <li>Won a best-architecture award from Innovation India for a Decentralized Fashion System.</li>
+          <li>All-India 12th position (IBM Rationale) for an application prototype addressing a civic problem in Bangalore.</li>
+          <li>1st position, Computer Society of India debate on iOS vs. Android vs. Windows OS.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+      <div class="block">
+        <h2 class="sec">Experience</h2>
+
+        <div class="job">
+          <div class="row1"><span class="role">Senior Software Engineer</span><span class="dates">May 2022 &ndash; Present</span></div>
+          <div class="row2"><span class="company">Intuit</span><span class="loc">Bengaluru, India</span></div>
+          <ul class="bullets">
+            <li>Building the Clickstream Platform &mdash; Clickstream Studio and related tooling for self-serve event tracking, instrumentation and analytics across products.</li>
+            <li>Built the Clickstream MCP (Model Context Protocol) server, AI agents and plugins, bringing agentic LLM-driven workflows to the platform.</li>
+            <li>Built the Superglue MCP server &mdash; an internal low-code ETL data-pipeline tool.</li>
+            <li>Built AI agents &amp; MCP servers exposing data and tooling to LLMs for agentic workflows over the data platform.</li>
+            <li>Full-Stack Developer in the AI, Data &amp; Analytics org, building data reliability and lineage platforms.</li>
+            <li>Built a real-time marketing data-attribute tracking system measuring data quality, health and end-to-end lineage across hundreds of Hive tables and Kafka topics.</li>
+            <li>Developed Kafka-producer-powered SDKs feeding dozens of processing systems, tracing lineage from source tables through the data lake to analytics.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Senior Software Engineer</span><span class="dates">Mar 2021 &ndash; May 2022</span></div>
+          <div class="row2"><span class="company">Bayer</span><span class="loc">Bangalore, India</span></div>
+          <ul class="bullets">
+            <li>Built solutions for farmers and retailers in the Bayer Crop Science division.</li>
+            <li>Architected an event-driven system using AWS Lambda, SNS, SQS, Kafka &amp; Postgres.</li>
+            <li>Practiced TDD with React &amp; Testing Library in a DevOps environment.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Software Engineer 2</span><span class="dates">Dec 2018 &ndash; Mar 2021</span></div>
+          <div class="row2"><span class="company">AirAsia</span><span class="loc">Bengaluru, India</span></div>
+          <ul class="bullets">
+            <li>Worked across Flights (Post-Booking) and Hotels; built a food-selection platform for web check-in customized for 8+ countries.</li>
+            <li>Architected and developed the Extranet (Hotel Management System) and a secured distributed system for Young Passengers Travelling Alone.</li>
+            <li>Built offline apps with Service Workers, Cache API and IndexedDB; implemented DevOps for 30+ microservices with GitLab CI and GCP.</li>
+            <li>Stack: Angular 8, Python (Flask), Node.js (Koa), GAE, Redis, React, Java (Spring Boot), BigQuery.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Full Stack Developer</span><span class="dates">Jan 2018 &ndash; Dec 2018</span></div>
+          <div class="row2"><span class="company">Times Internet</span><span class="loc">Bengaluru, India</span></div>
+          <ul class="bullets">
+            <li>Architected a server-side-rendered cricket site (Willow TV) with Nuxt.js (Vue) and Vuex.</li>
+            <li>Built APIs on a microservices architecture with Python (Flask), AWS, Postgres and Redis; user data-control features with Cassandra, SQL, Kafka and Spark.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Full Stack Developer</span><span class="dates">Feb 2017 &ndash; Jan 2018</span></div>
+          <div class="row2"><span class="company">Mantra Labs</span><span class="loc">Bangalore, India</span></div>
+          <ul class="bullets">
+            <li>Architected a Q&amp;A platform with Node.js, Socket.io, PHP (Laravel), Redis, AngularJS &amp; EC2; built an LMS for Edureka with Angular 4 and Redux.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Co-Founder</span><span class="dates">Aug 2016 &ndash; Feb 2017</span></div>
+          <div class="row2"><span class="company">EventQ</span><span class="loc">Bangalore, India</span></div>
+          <ul class="bullets">
+            <li>Co-founded and built EventQ, a smart Q&amp;A app that filters the top crowd questions in minutes; launched at 20+ conferences and seminars.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Programmer Analyst Trainee</span><span class="dates">Sep 2015 &ndash; Aug 2016</span></div>
+          <div class="row2"><span class="company">Cognizant</span><span class="loc">Bengaluru, India</span></div>
+          <ul class="bullets">
+            <li>Trained across SAP technologies (MM, PP, FICO); worked with AngularJS and PHP.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2 class="sec">Patents</h2>
+        <div class="patent">
+          <div class="pt">Agent Orchestration Method for Improved Computational Accuracy and Efficiency<span class="status">Patent Pending</span></div>
+          <div class="pmeta">Intuit &middot; Ref. IPR-2614453US1 &middot; Application 19/719,172 &middot; Filed Jun 24, 2026</div>
+        </div>
+        <div class="patent">
+          <div class="pt">Cybersecurity Architecture for a Machine Learning Model System<span class="status">Patent Pending</span></div>
+          <div class="pmeta">Intuit &middot; Ref. IPR-2614453US2 &middot; Application 19/719,180 &middot; Filed Jun 24, 2026</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h2 class="sec">Talks</h2>
+        <div class="talk">
+          <span class="tt"><a href="https://confengine.com/conferences/apidays-india-2026/proposal/50083/architecting-enterprise-agents-ecosystem-standardizing-apis-with-mcp-and-orchestrating-agents-via-event-driven-architecture">Architecting Enterprise Agents Ecosystem: Standardizing APIs with MCP and Orchestrating Agents via Event-Driven Architecture</a></span> &mdash; <span class="ev">APIdays India 2026</span>
+        </div>
+        <div class="talk">
+          <span class="tt"><a href="https://www.youtube.com/watch?v=G-rqFVTG0xE&amp;t=1212s">Building Modular Universal Apps using Nuxt.js</a></span> &mdash; <span class="ev">Global Vue Meetup</span>
+        </div>
+        <div class="talk">Also: SSR apps with Nuxt.js and sessions on decentralized apps &amp; interactive experiences. Blog: <a href="https://honey93.github.io/blogs/">honey93.github.io/blogs</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

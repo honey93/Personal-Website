@@ -13,13 +13,17 @@
         <div class="col-md-6 blog" v-for="talk in $store.state.talks" :key="'talk-' + talk.id">
           <a :href="talk.url" target="_blank" rel="noopener">
             <div class="blog-card">
-              <div class="blogImageParent talk-thumb">
+              <div v-if="talk.videoId" class="blogImageParent talk-thumb">
                 <img
                   :src="'https://img.youtube.com/vi/' + talk.videoId + '/hqdefault.jpg'"
                   class="blogImage"
                   :alt="talk.title"
                 />
                 <span class="play-badge"><i class="fas fa-play"></i></span>
+              </div>
+              <div v-else class="blogImageParent talk-thumb talk-thumb--conf">
+                <i class="fas fa-microphone-alt conf-icon"></i>
+                <span v-if="talk.upcoming" class="upcoming-badge">Upcoming</span>
               </div>
               <div class="blog-content">
                 <h4 class="blog-title">{{ talk.title }}</h4>
@@ -141,6 +145,32 @@ export default {
 .blog-card:hover .play-badge {
   transform: translate(-50%, -50%) scale(1.1);
   background: #1f93ef;
+}
+.talk-thumb--conf {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-soft), var(--bg-elev));
+}
+.conf-icon {
+  font-size: 54px;
+  color: var(--accent);
+  opacity: 0.85;
+}
+.upcoming-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: Karla, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 .talk-desc {
   font-family: Karla, sans-serif;

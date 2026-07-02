@@ -6,10 +6,10 @@ export const state = () => {
     // Short intro shown in the About section
     about: {
       summary:
-        "I'm a Full-Stack Engineer who enjoys building end-to-end systems that serve people at scale — from real-time data platforms to consumer web apps. Over the last decade I've architected event-driven backends, shipped front-ends for millions of users, written for leading engineering publications, and mentored the next wave of developers.",
+        "I'm a Full-Stack Engineer with deep Data & AI expertise, building end-to-end systems that serve people at scale — from clickstream data platforms and AI agents to consumer web apps. Over the last decade I've architected event-driven data backends, built AI agents and MCP servers, shipped front-ends for millions of users, written for leading engineering publications, and mentored the next wave of developers.",
       highlights: [
-        "10+ years building production software across data, web and cloud",
-        "Currently shaping data reliability & lineage in Intuit's AI, Data & Analytics org",
+        "Full-Stack Engineer with 10+ years and deep Data & AI expertise across data, web and cloud",
+        "Currently building the Clickstream platform, AI agents & MCP servers in Intuit's AI, Data & Analytics org",
         "Open-source contributor and tech blogger (freeCodeCamp, Codeburst.io)",
         "Mentor at Scaler and interviewer at Intervue.io"
       ]
@@ -76,8 +76,42 @@ export const state = () => {
       }
     ],
 
+    // Patents (filed applications — patent pending)
+    patents: [
+      {
+        id: 1,
+        title: "Agent Orchestration Method for Improved Computational Accuracy and Efficiency",
+        assignee: "Intuit",
+        reference: "IPR-2614453US1",
+        applicationNumber: "19/719,172",
+        filed: "Jun 24, 2026",
+        status: "Patent Pending"
+      },
+      {
+        id: 2,
+        title: "Cybersecurity Architecture for a Machine Learning Model System",
+        assignee: "Intuit",
+        reference: "IPR-2614453US2",
+        applicationNumber: "19/719,180",
+        filed: "Jun 24, 2026",
+        status: "Patent Pending"
+      }
+    ],
+
     // Talks, meetups & sessions (most are on YouTube)
     talks: [
+      {
+        id: 0,
+        title:
+          "Architecting Enterprise Agents Ecosystem: Standardizing APIs with MCP and Orchestrating Agents via Event-Driven Architecture",
+        url:
+          "https://confengine.com/conferences/apidays-india-2026/proposal/50083/architecting-enterprise-agents-ecosystem-standardizing-apis-with-mcp-and-orchestrating-agents-via-event-driven-architecture",
+        videoId: null,
+        event: "APIdays India 2026",
+        upcoming: true,
+        description:
+          "Conference talk on architecting an enterprise agents ecosystem — standardizing APIs with MCP (Model Context Protocol) and orchestrating agents through an event-driven architecture."
+      },
       {
         id: 1,
         title: "Server-Side Rendered Apps using Nuxt.js",
@@ -95,6 +129,15 @@ export const state = () => {
         event: "Global Vue Meetup",
         description:
           "Speaking at the Global Vue Meetup alongside Daniel Madalitso Phiri on building real-world apps with Vue.js."
+      },
+      {
+        id: 5,
+        title: "Building Modular Universal Apps using Nuxt.js",
+        url: "https://www.youtube.com/watch?v=G-rqFVTG0xE&t=1212s",
+        videoId: "G-rqFVTG0xE",
+        event: "Global Vue Meetup",
+        description:
+          "A deep dive into building modular, universal (server-side-rendered) applications with Nuxt.js (Vue)."
       },
       {
         id: 3,
@@ -126,8 +169,11 @@ export const state = () => {
         duration: "May 2022 – Present",
         location: "Bengaluru, India",
         bullets: [
-          "Full-Stack Developer in the AI, Data & Analytics org.",
-          "AI Agents & MCP: built AI agents and MCP (Model Context Protocol) servers that expose data and tooling to LLMs, enabling agentic workflows over the data platform.",
+          "Clickstream Platform: building the Clickstream Studio and related tooling that power self-serve event tracking, instrumentation and analytics across products.",
+          "Built the Clickstream MCP (Model Context Protocol) server, AI agents and plugins — bringing agentic, LLM-driven workflows to the Clickstream platform.",
+          "Built the Superglue MCP server — an internal low-code ETL data-pipeline tool.",
+          "AI Agents & MCP: built AI agents and MCP servers that expose data and tooling to LLMs, enabling agentic workflows over the data platform.",
+          "Full-Stack Developer in the AI, Data & Analytics org, building data reliability and lineage platforms.",
           "Data Reliability Engineering: built a real-time marketing data attribute tracking system measuring data quality, health metrics and end-to-end lineage across hundreds of Hive tables and Kafka topics.",
           "Data Lineage: built Kafka-producer-powered SDKs that feed dozens of processing systems, tracing lineage from source tables through the data lake to analytics dashboards.",
           "Datamap: contributed to a product in the clean-data domain."
