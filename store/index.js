@@ -8,8 +8,8 @@ export const state = () => {
       summary:
         "I'm a Full-Stack Engineer with deep Data & AI expertise, building end-to-end systems that serve people at scale — from clickstream data platforms and AI agents to consumer web apps. Over the last decade I've architected event-driven data backends, built AI agents and MCP servers, shipped front-ends for millions of users, written for leading engineering publications, and mentored the next wave of developers.",
       highlights: [
-        "Full-Stack Engineer with 10+ years and deep Data & AI expertise across data, web and cloud",
-        "Currently building the Clickstream platform, AI agents & MCP servers in Intuit's AI, Data & Analytics org",
+        "Staff Software Engineer with 10+ years and deep Data & AI expertise across data, web and cloud",
+        "Currently building Agents and Authoring Tools for Clickstream in Intuit's Behaviour Understanding org",
         "Open-source contributor and tech blogger (freeCodeCamp, Codeburst.io)",
         "Mentor at Scaler and interviewer at Intervue.io"
       ]
@@ -104,13 +104,13 @@ export const state = () => {
         id: 0,
         title:
           "Architecting Enterprise Agents Ecosystem: Standardizing APIs with MCP and Orchestrating Agents via Event-Driven Architecture",
-        url:
-          "https://confengine.com/conferences/apidays-india-2026/proposal/50083/architecting-enterprise-agents-ecosystem-standardizing-apis-with-mcp-and-orchestrating-agents-via-event-driven-architecture",
-        videoId: null,
+        url: "https://www.youtube.com/watch?v=Zr0uIE-uMyQ",
+        videoId: "Zr0uIE-uMyQ",
         event: "APIdays India 2026",
-        upcoming: true,
+        linkedinUrl:
+          "https://www.linkedin.com/feed/update/urn:li:activity:7504557591625289729/",
         description:
-          "Conference talk on architecting an enterprise agents ecosystem — standardizing APIs with MCP (Model Context Protocol) and orchestrating agents through an event-driven architecture."
+          "Talk delivered with co-presenter Kiran Hiremath on architecting an enterprise agents ecosystem — standardizing APIs with MCP (Model Context Protocol) and orchestrating agents through an event-driven architecture."
       },
       {
         id: 1,
@@ -163,10 +163,21 @@ export const state = () => {
     experience: [
       {
         id: 1,
+        role: "Staff Software Engineer",
+        company: "Intuit",
+        logo: "icon.png",
+        duration: "Aug 2026 – Present",
+        location: "Bengaluru, India",
+        bullets: [
+          "Working in the Behaviour Understanding domain, building Agents, Authoring Tools and other products for Clickstream."
+        ]
+      },
+      {
+        id: 1.5,
         role: "Senior Software Engineer",
         company: "Intuit",
         logo: "icon.png",
-        duration: "May 2022 – Present",
+        duration: "May 2022 – Aug 2026",
         location: "Bengaluru, India",
         bullets: [
           "Clickstream Platform: building the Clickstream Studio and related tooling that power self-serve event tracking, instrumentation and analytics across products.",

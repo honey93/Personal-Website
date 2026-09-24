@@ -17,8 +17,8 @@
   html, body {
     font-family: "Karla", "Helvetica Neue", Arial, sans-serif;
     color: var(--ink);
-    font-size: 9.4px;
-    line-height: 1.4;
+    font-size: 9.1px;
+    line-height: 1.32;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -34,7 +34,7 @@
     background: #f7fafc;
     color: var(--ink);
     text-align: center;
-    padding: 18px 24px 15px;
+    padding: 12px 24px 10px;
     border-bottom: 3px solid var(--accent);
   }
   header h1 {
@@ -60,11 +60,11 @@
   .body { display: flex; flex: 1; }
   .left {
     width: 34%;
-    padding: 16px 18px 20px;
+    padding: 12px 18px 14px;
     background: #f7fafc;
     border-right: 1px solid var(--line);
   }
-  .right { width: 66%; padding: 16px 20px 20px; }
+  .right { width: 66%; padding: 12px 20px 14px; }
 
   h2.sec {
     font-size: 11px;
@@ -76,8 +76,8 @@
     padding-bottom: 3px;
     margin-bottom: 8px;
   }
-  .block { margin-bottom: 14px; }
-  .left .block { margin-bottom: 15px; }
+  .block { margin-bottom: 10px; }
+  .left .block { margin-bottom: 11px; }
 
   p { margin-bottom: 5px; }
   ul { list-style: none; }
@@ -108,7 +108,7 @@
   .skill-group .v { color: var(--muted); }
 
   /* Experience */
-  .job { margin-bottom: 11px; }
+  .job { margin-bottom: 7px; }
   .job .row1 { display: flex; justify-content: space-between; align-items: baseline; }
   .job .role { font-weight: 700; font-size: 11px; color: var(--ink); }
   .job .dates { color: var(--faint); font-size: 8.8px; white-space: nowrap; }
@@ -158,7 +158,7 @@
     <div class="left">
       <div class="block">
         <h2 class="sec">Summary</h2>
-        <p>Full-Stack Engineer with deep Data &amp; AI expertise, building end-to-end systems at scale over 10+ years across data, web and cloud. I architect event-driven data platforms, build AI agents &amp; MCP servers, and ship front-ends for millions of users. Open-source contributor, tech blogger and mentor.</p>
+        <p>Staff Software Engineer with deep Data &amp; AI expertise, building end-to-end systems at scale over 10+ years across data, web and cloud. I architect event-driven data platforms, build AI agents &amp; MCP servers, and ship front-ends for millions of users. Open-source contributor, tech blogger and mentor.</p>
       </div>
 
       <div class="block">
@@ -203,13 +203,20 @@
         <h2 class="sec">Experience</h2>
 
         <div class="job">
-          <div class="row1"><span class="role">Senior Software Engineer</span><span class="dates">May 2022 &ndash; Present</span></div>
+          <div class="row1"><span class="role">Staff Software Engineer</span><span class="dates">Aug 2026 &ndash; Present</span></div>
+          <div class="row2"><span class="company">Intuit</span><span class="loc">Bengaluru, India</span></div>
+          <ul class="bullets">
+            <li>Working in the Behaviour Understanding domain, building Agents and Authoring Tools for the Clickstream platform.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="row1"><span class="role">Senior Software Engineer</span><span class="dates">May 2022 &ndash; Aug 2026</span></div>
           <div class="row2"><span class="company">Intuit</span><span class="loc">Bengaluru, India</span></div>
           <ul class="bullets">
             <li>Building the Clickstream Platform &mdash; Clickstream Studio and related tooling for self-serve event tracking, instrumentation and analytics across products.</li>
             <li>Built the Clickstream MCP (Model Context Protocol) server, AI agents and plugins, bringing agentic LLM-driven workflows to the platform.</li>
             <li>Built the Superglue MCP server &mdash; an internal low-code ETL data-pipeline tool.</li>
-            <li>Built AI agents &amp; MCP servers exposing data and tooling to LLMs for agentic workflows over the data platform.</li>
             <li>Full-Stack Developer in the AI, Data &amp; Analytics org, building data reliability and lineage platforms.</li>
             <li>Built a real-time marketing data-attribute tracking system measuring data quality, health and end-to-end lineage across hundreds of Hive tables and Kafka topics.</li>
             <li>Developed Kafka-producer-powered SDKs feeding dozens of processing systems, tracing lineage from source tables through the data lake to analytics.</li>

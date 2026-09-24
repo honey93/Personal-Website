@@ -7,7 +7,7 @@
           <p class="heroHello">Hello, I'm</p>
           <h1 class="heroName">Honey Thakuria</h1>
           <p class="heroDescription">
-            Full-Stack Engineer building end-to-end systems at scale, with deep Data &amp; AI expertise.
+            Staff Software Engineer building end-to-end systems at scale, with deep Data &amp; AI expertise.
           </p>
           <p class="heroTyping">
             I create things with
@@ -207,13 +207,13 @@ export default {
   },
   head() {
     return {
-      title: "Honey Thakuria — Full-Stack Engineer · Data & AI",
+      title: "Honey Thakuria — Staff Software Engineer · Data & AI",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
-            "Honey Thakuria is a Full-Stack Engineer with deep Data & AI expertise and 10+ years across data, web and cloud — currently building AI agents, MCP servers and clickstream data platforms at Intuit. Open-source contributor, tech blogger and mentor. Explore projects, experience and writing."
+            "Honey Thakuria is a Staff Software Engineer with deep Data & AI expertise and 10+ years across data, web and cloud — currently building AI agents, MCP servers and clickstream data platforms at Intuit. Open-source contributor, tech blogger and mentor. Explore projects, experience and writing."
         }
       ]
     };
